@@ -1,9 +1,10 @@
 import React from 'react'
 
-type Props = {}
 
-const Sidebar = (props: Props) => {
-  return (
+const Sidebar = () => {
+
+
+    return (
     <div>Sidebar</div>
   )
 }

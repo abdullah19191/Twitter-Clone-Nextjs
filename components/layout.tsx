@@ -1,11 +1,15 @@
  
 import React from 'react'
 
-type Props = {}
+interface LayoutProps {
+    children: React.ReactNode;
+}
 
-function Layout({}: Props) {
+const Layout: React.FC<LayoutProps> = ({children}) => {
   return (
-    <div>layout</div>
+    <div>
+        {children}
+        </div>
   )
 }
 

@@ -2,6 +2,7 @@ import React from 'react'
 import {BsHouseFill,BsBellFill} from 'react-icons/bs'
 import {FaUser} from 'react-icons/fa'
 import SidebarLogo from './Sidebarlogo'
+
 const Sidebar = () => {
      const items = [
         {
@@ -28,6 +29,14 @@ const Sidebar = () => {
             <div className="">
                 <div className="">
                     <SidebarLogo/>
+                    {items.map((items) => (
+                        <SidebarItem
+                        key={items.href}
+                        href={items.href}
+                        label={items.label}
+                        icon={items.icon}
+                        />
+                    ))}
                 </div>
             </div>
         </div>

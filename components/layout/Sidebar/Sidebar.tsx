@@ -3,6 +3,7 @@ import {BsHouseFill,BsBellFill} from 'react-icons/bs'
 import {FaUser} from 'react-icons/fa'
 import SidebarItem from './SidebarItem'
 import SidebarLogo from './Sidebarlogo'
+import {BiLogOut} from 'react-icons/bi'
 
 const Sidebar = () => {
      const items = [
@@ -24,20 +25,26 @@ const Sidebar = () => {
         
      ]
 
+    
+
     return (
     <div>
-        <div className="">
-            <div className="">
-                <div className="">
+        <div className=" h-full pr-4 md:pr-6 col-span-1 ">
+            <div className=" flex flex-col items-end">
+                <div className=" space-y-2 lg:w-[230px]">
                     <SidebarLogo/>
                     {items.map((items) => (
                         <SidebarItem
                         key={items.href}
                         href={items.href}
                         label={items.label}
-                        icon={items.icon}
+                        icons={items.icon}
                         />
                     ))}
+                    <SidebarItem  onClick={()=>{}} label='Logout'
+                        icons={BiLogOut}
+                        />
+                        <SiderbarTweetButton/>
                 </div>
             </div>
         </div>

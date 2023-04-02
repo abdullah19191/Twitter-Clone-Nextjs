@@ -4,6 +4,7 @@ import {FaUser} from 'react-icons/fa'
 import SidebarItem from './SidebarItem'
 import SidebarLogo from './Sidebarlogo'
 import {BiLogOut} from 'react-icons/bi'
+import SidebarTweetButton from './SidebarTweetButton'
 
 const Sidebar = () => {
      const items = [
@@ -44,7 +45,7 @@ const Sidebar = () => {
                     <SidebarItem  onClick={()=>{}} label='Logout'
                         icons={BiLogOut}
                         />
-                        <SiderbarTweetButton/>
+                        <SidebarTweetButton/>
                 </div>
             </div>
         </div>

@@ -28,11 +28,19 @@ const Model:React.FC<ModelProps> = ({
         }
         onClose();
     },[disabled,onClose]);
-    
-  return (
-    <div>
 
-    </div>
+    const handeleSubmit = useCallback(() =>{
+             if(disabled){
+                return;
+             }
+             onSubmit();
+    },[disabled,onSubmit]);
+
+    if(!isOpen){
+        return null;
+    }
+  return (
+    <div></div>
   )
 }
 

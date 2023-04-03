@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
 import {AiOutlineClose} from "react-icons/ai"
+import Buttons from "./Buttons";
 interface ModelProps {
   isOpen?: boolean;
   onClose: () => void;
@@ -54,6 +55,10 @@ const Model: React.FC<ModelProps> = ({
                 <div className=" relative p-10 flex-auto ">
                     {body}
                 </div>
+                <div className=" flex flex-col  gap-2 p-10">
+                    <Buttons label={actionLabel} onClick={handeleSubmit } disbled={disabled} large fullWidth secondary/>
+                </div>
+
             </div>
         </div>
       </div>

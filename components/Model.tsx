@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 
 interface ModelProps {
     isOpen?:boolean;
@@ -22,6 +22,13 @@ const Model:React.FC<ModelProps> = ({
     disabled,
 }
 ) => {
+    const handleClose = useCallback(()=>{
+        if(disabled){
+            return;
+        }
+        onClose();
+    },[disabled,onClose]);
+    
   return (
     <div>
 

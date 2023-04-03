@@ -6,7 +6,7 @@ import Model from "../components/Model";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-    <Model/>
+    <Model isOpen/>
       <Layout>
         <Component {...pageProps} />
       </Layout>

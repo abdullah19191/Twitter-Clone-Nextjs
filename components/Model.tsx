@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import {AiOutlineClose} from "react-icons/ai"
+import { AiOutlineClose } from "react-icons/ai";
 import Buttons from "./Buttons";
 interface ModelProps {
   isOpen?: boolean;
@@ -41,25 +41,30 @@ const Model: React.FC<ModelProps> = ({
   }
   return (
     <div>
-      <div
-        className=" justify-center flex items-center bg-neutral-800 bg-opacity-70 outline-none overflow-x-hidden overflow-y-auto z-50 fixed inset-0"
-      >
+      <div className=" justify-center flex items-center bg-neutral-800 bg-opacity-70 outline-none overflow-x-hidden overflow-y-auto z-50 fixed inset-0">
         <div className=" relative w-full lg:w-3/6 my-6 mx-auto lg:max-w-3xl h-full lg:h-auto">
-            <div className=" h-full lg:h-auto border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-black  outline-none focus:outline-none">
-                <div className=" flex items-center justify-between p-10 rounded-t">
-                    <h3 className=" text-3xl font-semibold text-white" >{title}</h3>
-                    <button onClick={handleClose} className=" p-1 ml-auto border-0 text-white hover:opacity-60  transition">
-                        <AiOutlineClose color="white" size={20}/>
-                        </button>
-                </div>
-                <div className=" relative p-10 flex-auto ">
-                    {body}
-                </div>
-                <div className=" flex flex-col  gap-2 p-10">
-                    <Buttons label={actionLabel} onClick={handeleSubmit } disbled={disabled} large fullWidth secondary/>
-                </div>
-
+          <div className=" h-full lg:h-auto border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-black  outline-none focus:outline-none">
+            <div className=" flex items-center justify-between p-10 rounded-t">
+              <h3 className=" text-3xl font-semibold text-white">{title}</h3>
+              <button
+                onClick={handleClose}
+                className=" p-1 ml-auto border-0 text-white hover:opacity-60  transition"
+              >
+                <AiOutlineClose color="white" size={20} />
+              </button>
             </div>
+            <div className=" relative p-10 flex-auto ">{body}</div>
+            <div className=" flex flex-col  gap-2 p-10">
+              <Buttons
+                label={actionLabel}
+                onClick={handeleSubmit}
+                disbled={disabled}
+                large
+                fullWidth
+                secondary
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

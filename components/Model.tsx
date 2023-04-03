@@ -51,6 +51,9 @@ const Model: React.FC<ModelProps> = ({
                         <AiOutlineClose color="white" size={20}/>
                         </button>
                 </div>
+                <div className=" relative p-10 flex-auto ">
+                    {body}
+                </div>
             </div>
         </div>
       </div>

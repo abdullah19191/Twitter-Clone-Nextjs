@@ -6,7 +6,7 @@ import LoganModel from "../components/Models/LoganModel";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-    <LoganModel/>
+      <LoganModel />
       <Layout>
         <Component {...pageProps} />
       </Layout>

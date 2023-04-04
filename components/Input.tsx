@@ -11,7 +11,11 @@ import React from 'react'
  }
 
 const Input:React.FC<InputProps> = ({
-    
+    placeholder,
+    value,
+    type,
+    disabled,
+    onCharge,
 }) => {
   return (
     <div>Input</div>

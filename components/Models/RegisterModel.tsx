@@ -55,8 +55,10 @@ const RegisterModel = () => {
   );
 
   const footer = (
-    <div className=" text-neutral-400">
-
+    <div className=" text-neutral-400 text-center mt-4">
+         <p>Already have an account?
+            <span className=" text-white cursor-pointer hover:underline">Sign In</span>
+         </p>
     </div>
   )
   return (
@@ -68,6 +70,7 @@ const RegisterModel = () => {
       onClose={registerModel.onClose}
       onSubmit={onSubmit}
       body={bodyContent}
+      footer={footer}
     />
   );
 };

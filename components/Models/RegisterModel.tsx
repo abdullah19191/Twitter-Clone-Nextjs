@@ -36,13 +36,13 @@ const RegisterModel = () => {
       <Input
         value={name}
         disabled={isLoading}
-        placeholder="name"
+        placeholder="Name"
         onCharge={(e) => setName(e.target.value)}
       />
       <Input
         value={username}
         disabled={isLoading}
-        placeholder="username"
+        placeholder="Username"
         onCharge={(e) => setUsername(e.target.value)}
       />
       <Input

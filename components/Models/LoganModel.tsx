@@ -10,7 +10,7 @@ const LoganModel = () => {
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const onSubmit = useCallback(  async () => {
+  const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
       loginModel.onClose();
@@ -21,23 +21,33 @@ const LoganModel = () => {
     }
   }, [loginModel]);
 
-   const bodyContent = (
+  const bodyContent = (
     <div className=" flex flex-col gap-4">
-        <Input value={email} disabled={isLoading} placeholder="Email" onCharge={(e) => setEmail(e.target.value)}/>
-        <Input value={password} disabled={isLoading} placeholder="Password" onCharge={(e) => setEmail(e.target.value)}/>
+      <Input
+        value={email}
+        disabled={isLoading}
+        placeholder="Email"
+        onCharge={(e) => setEmail(e.target.value)}
+      />
+      <Input
+        value={password}
+        disabled={isLoading}
+        placeholder="Password"
+        onCharge={(e) => setEmail(e.target.value)}
+      />
     </div>
-   )
+  );
   return (
     <Model
-     disabled={isLoading}
-     isOpen={loginModel.isOpen}
-     title="Login"
-     actionLabel="Sign In"
-     onClose={loginModel.onClose}
-     onSubmit={onSubmit}
-     body={bodyContent}
+      disabled={isLoading}
+      isOpen={loginModel.isOpen}
+      title="Login"
+      actionLabel="Sign In"
+      onClose={loginModel.onClose}
+      onSubmit={onSubmit}
+      body={bodyContent}
     />
-  )
+  );
 };
 
 export default LoganModel;

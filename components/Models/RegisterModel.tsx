@@ -2,9 +2,11 @@ import React, { useCallback, useState } from "react";
 import Input from "../Input";
 import Model from "../Model";
 import useRegisterModel from "../../Hooks/useRegisterModel";
+import useLoganModal from "../../Hooks/useLoginModel";
 
 const RegisterModel = () => {
   const registerModel = useRegisterModel();
+  const loginModel = useLoganModal();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

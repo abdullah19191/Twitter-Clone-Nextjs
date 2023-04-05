@@ -21,6 +21,7 @@ const RegisterModel = () => {
     registerModel.onClose();
     loginModel.onOpen();
   },[isLoading,registerModel,loginModel])
+  
   const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);

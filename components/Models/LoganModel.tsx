@@ -2,14 +2,25 @@ import React, { useCallback, useState } from "react";
 import useLoganModal from "../../Hooks/useLoginModel";
 import Input from "../Input";
 import Model from "../Model";
+import useRegisterModel from "../../Hooks/useRegisterModel";
 
 const LoganModel = () => {
   const loginModel = useLoganModal();
+  const registerModel = useRegisterModel();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+
+  const onToggle = useCallback(()=>{
+    if(isLoading){
+      return;
+    }
+    loginModel.onClose();
+    registerModel.onOpen();
+  },[isLoading,registerModel,loginModel])
+  
   const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
@@ -37,6 +48,15 @@ const LoganModel = () => {
       />
     </div>
   );
+
+  const footerContent = (
+    <div className=" text-neutral-400 text-center mt-4">
+         <p>First time using Twiiter?
+            <span onClick={onToggle}  className=" ml-2 text-white 
+            cursor-pointer hover:underline">Create an account</span>
+         </p>
+    </div>
+  );
   return (
     <Model
       disabled={isLoading}
@@ -46,6 +66,7 @@ const LoganModel = () => {
       onClose={loginModel.onClose}
       onSubmit={onSubmit}
       body={bodyContent}
+      footer={footerContent}
     />
   );
 };

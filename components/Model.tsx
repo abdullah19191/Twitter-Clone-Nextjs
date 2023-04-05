@@ -64,6 +64,7 @@ const Model: React.FC<ModelProps> = ({
                 secondary
               />
             </div>
+            <div className=" p-8 mb-4">{footer}</div>
           </div>
         </div>
       </div>

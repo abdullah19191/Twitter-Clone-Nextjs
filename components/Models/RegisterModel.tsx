@@ -14,6 +14,13 @@ const RegisterModel = () => {
   const [username, setUsername] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  const onToggle = useCallback(()=>{
+    if(isLoading){
+      return;
+    }
+    registerModel.onClose();
+    loginModel.onOpen();
+  },[isLoading,registerModel,loginModel])
   const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
@@ -54,13 +61,13 @@ const RegisterModel = () => {
     </div>
   );
 
-  const footer = (
+  const footerContent = (
     <div className=" text-neutral-400 text-center mt-4">
          <p>Already have an account?
-            <span className=" text-white cursor-pointer hover:underline">Sign In</span>
+            <span onClick={onToggle}  className=" ml-2 text-white cursor-pointer hover:underline">Sign In</span>
          </p>
     </div>
-  )
+  );
   return (
     <Model
       disabled={isLoading}
@@ -70,7 +77,7 @@ const RegisterModel = () => {
       onClose={registerModel.onClose}
       onSubmit={onSubmit}
       body={bodyContent}
-      footer={footer}
+      footer={footerContent}
     />
   );
 };

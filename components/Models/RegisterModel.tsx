@@ -34,6 +34,18 @@ const RegisterModel = () => {
         onCharge={(e) => setEmail(e.target.value)}
       />
       <Input
+        value={name}
+        disabled={isLoading}
+        placeholder="name"
+        onCharge={(e) => setName(e.target.value)}
+      />
+      <Input
+        value={username}
+        disabled={isLoading}
+        placeholder="username"
+        onCharge={(e) => setUsername(e.target.value)}
+      />
+      <Input
         value={password}
         disabled={isLoading}
         placeholder="Password"
@@ -45,8 +57,8 @@ const RegisterModel = () => {
     <Model
       disabled={isLoading}
       isOpen={registerModel.isOpen}
-      title="Register"
-      actionLabel="Sign In"
+      title="Create an account"
+      actionLabel="Register"
       onClose={registerModel.onClose}
       onSubmit={onSubmit}
       body={bodyContent}

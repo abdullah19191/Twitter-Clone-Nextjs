@@ -3,14 +3,14 @@ import Input from "../Input";
 import Model from "../Model";
 import useRegisterModel from "../../Hooks/useRegisterModel";
 
-const RegisterModel  = () => {
-  const registerModel = useRegisterModel()
+const RegisterModel = () => {
+  const registerModel = useRegisterModel();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const onSubmit = useCallback(  async () => {
+  const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
       registerModel.onClose();
@@ -21,23 +21,33 @@ const RegisterModel  = () => {
     }
   }, [registerModel]);
 
-   const bodyContent = (
+  const bodyContent = (
     <div className=" flex flex-col gap-4">
-        <Input value={email} disabled={isLoading} placeholder="Email" onCharge={(e) => setEmail(e.target.value)}/>
-        <Input value={password} disabled={isLoading} placeholder="Password" onCharge={(e) => setEmail(e.target.value)}/>
+      <Input
+        value={email}
+        disabled={isLoading}
+        placeholder="Email"
+        onCharge={(e) => setEmail(e.target.value)}
+      />
+      <Input
+        value={password}
+        disabled={isLoading}
+        placeholder="Password"
+        onCharge={(e) => setEmail(e.target.value)}
+      />
     </div>
-   )
+  );
   return (
     <Model
-     disabled={isLoading}
-     isOpen={registerModel.isOpen}
-     title="Register"
-     actionLabel="Sign In"
-     onClose={registerModel.onClose}
-     onSubmit={onSubmit}
-     body={bodyContent}
+      disabled={isLoading}
+      isOpen={registerModel.isOpen}
+      title="Register"
+      actionLabel="Sign In"
+      onClose={registerModel.onClose}
+      onSubmit={onSubmit}
+      body={bodyContent}
     />
-  )
+  );
 };
 
-export default RegisterModel; 
+export default RegisterModel;

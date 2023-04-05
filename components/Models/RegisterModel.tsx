@@ -53,6 +53,12 @@ const RegisterModel = () => {
       />
     </div>
   );
+
+  const footer = (
+    <div className=" text-neutral-400">
+
+    </div>
+  )
   return (
     <Model
       disabled={isLoading}
